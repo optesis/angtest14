@@ -5,7 +5,7 @@
 
 {
     'name': 'Plan Comptable SFD',
-    'version': '1.4.0',
+    'version': '1.4.1',
     'author': 'Moore senegal',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
@@ -19,9 +19,9 @@
     ],
     'data': [
         'data/account_data.xml',
-        'data/l10n_pcgo_chart_data.xml',
+        'data/l10n_rcsfd_chart_data.xml',
         'data/account.account.template.csv',
-        'data/l10n_pcgo_chart_post_data.xml',
+        'data/l10n_rcsfd_chart_post_data.xml',
         'data/account_tax_template_data.xml',
         'data/account_chart_template_data.xml',
     ],

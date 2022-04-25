@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data >
   <record model="account.account.type" id="account_type_hors_bilan">
     <field name="name">Comptes Hors Bilan</field>
+    <field name="internal_group">off_balance</field>
+
   </record>
 
 
@@ -17,6 +20,6 @@
         <field name="currency_id" ref="base.XOF"/>
   </record>
 
-
+    </data>
 </odoo>
 
