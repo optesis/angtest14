@@ -1,60 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <data noupdate="1">
 
         <!-- Account Tax Group -->
          <record id="TVA_vente_18" model="account.tax.group">
           <field name="name">TVA 18% (vente)</field>
           <!-- <field name="applicability">taxes</field> -->
       </record>
-      <record id="TVA_services_18" model="account.tax.group">
-          <field name="name">TVA 18% (services)</field>
-          <!-- <field name="applicability">taxes</field> -->
-      </record>
-      <record id="TVA_achat_services_18" model="account.tax.group">
-          <field name="name">TVA 18% (achat service)</field>
-          <!-- <field name="applicability">taxes</field> -->
-      </record>
-      <record id="TVA_travaux_18" model="account.tax.group">
-          <field name="name">TVA 18% (travaux)</field>
-          <!-- <field name="applicability">taxes</field> -->
-      </record>
-      <record id="TVA_lasm_18" model="account.tax.group">
-          <field name="name">TVA 18% (lasm)</field>
-          <!-- <field name="applicability">taxes</field> -->
-      </record>
-      <record id="TVA_services_10" model="account.tax.group">
-          <field name="name">TVA 10% (services)</field>
-          <!-- <field name="applicability">taxes</field> -->
-      </record>
-      <record id="TVA_vente_10" model="account.tax.group">
-          <field name="name">TVA 10% (vente)</field>
-          <!-- <field name="applicability">taxes</field> -->
-      </record>
-      <record id="TVA_achat_18" model="account.tax.group">
+        <record id="TVA_achat_18" model="account.tax.group">
           <field name="name">TVA 18% (achat)</field>
           <!-- <field name="applicability">taxes</field> -->
       </record>
+      <!--<record id="TVA_services_18" model="account.tax.group">
+          <field name="name">TVA 18% (services)</field>
+          <field name="applicability">taxes</field> 
+      </record>
+      <record id="TVA_achat_services_18" model="account.tax.group">
+          <field name="name">TVA 18% (achat service)</field>
+          <field name="applicability">taxes</field> 
+      </record>
+      <record id="TVA_travaux_18" model="account.tax.group">
+          <field name="name">TVA 18% (travaux)</field>
+        <field name="applicability">taxes</field>
+      </record>
+      <record id="TVA_lasm_18" model="account.tax.group">
+          <field name="name">TVA 18% (lasm)</field>
+        <field name="applicability">taxes</field> 
+      </record>
+      <record id="TVA_services_10" model="account.tax.group">
+          <field name="name">TVA 10% (services)</field>
+           <field name="applicability">taxes</field>
+      </record>
+      <record id="TVA_vente_10" model="account.tax.group">
+          <field name="name">TVA 10% (vente)</field>
+        <field name="applicability">taxes</field>
+      </record>
+     
       <record id="TVA_immobilisations_18" model="account.tax.group">
           <field name="name">TVA 18% (immobilisations)</field>
-          <!-- <field name="applicability">taxes</field> -->
+         <field name="applicability">taxes</field> 
       </record>
       <record id="TVA_transport_18" model="account.tax.group">
           <field name="name">TVA 18% (transport)</field>
-          <!-- <field name="applicability">taxes</field> -->
+  <field name="applicability">taxes</field>
       </record>
       <record id="TVA_purchase_services_18" model="account.tax.group">
           <field name="name">TVA 18% (purchase_services)</field>
-          <!-- <field name="applicability">taxes</field> -->
+        <field name="applicability">taxes</field>
       </record>
       <record id="TVA_purchase_services_10" model="account.tax.group">
           <field name="name">TVA 10% (purchase_services)</field>
-          <!-- <field name="applicability">taxes</field> -->
+         <field name="applicability">taxes</field> 
       </record>
       <record id="TVA_vente_exempt_0" model="account.tax.group">
           <field name="name">Exonere de TVA</field>
-          <!-- <field name="applicability">taxes</field> -->
-      </record>
+          <field name="applicability">taxes</field> 
+      </record>-->
 
     </data>
 </odoo>
