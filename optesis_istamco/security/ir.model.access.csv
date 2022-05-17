@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_optesis_port,optesis.port,model_optesis_port,base.group_user,1,1,1,1
+access_optesis_voyage,optesis.voyage,model_optesis_voyage,base.group_user,1,1,1,1
+access_optesis_site,optesis.site,model_optesis_site,base.group_user,1,1,1,1
+access_optesis_vehicule,optesis.vehicule,model_optesis_vehicule,base.group_user,1,1,1,1
+access_optesis_bon_livraison,optesis.bon.livraison,model_optesis_bon_livraison,base.group_user,1,1,1,1

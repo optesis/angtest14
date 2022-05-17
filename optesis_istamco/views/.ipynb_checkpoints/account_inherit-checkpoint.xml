@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="optesis_port_form_view">
+        <field name="name">optesis.port.form</field>
+        <field name="model">optesis.port</field>
+        <field name="arch" type="xml">
+            <form string="Port Form">
+                
+                <sheet>
+                     <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+           
+            </form>
+        </field>
+    </record>
+
+          <record  id="action_menu_form_port" model="ir.actions.act_window">
+        <field name="name">Port</field>
+        <field name="res_model">optesis.port</field>
+        <field name="type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Ajouter un port
+            </p>
+        </field>
+    </record>
+        
+
+   <record model="ir.ui.view" id="optesis_voyage_form_view">
+        <field name="name">optesis.port.form</field>
+        <field name="model">optesis.voyage</field>
+        <field name="arch" type="xml">
+            <form string="Voyage Form">
+                
+                <sheet>
+                     <group>
+                        <field name="name"/>
+                          <field name="code"/>
+                          <field name="date_arrivee" string="Date d'arrivée"/>
+                    </group>
+
+                
+                </sheet>
+           
+            </form>
+        </field>
+    </record>
+        
+  
+          <record  id="action_menu_form_voyage" model="ir.actions.act_window">
+        <field name="name">Voyage</field>
+        <field name="res_model">optesis.voyage</field>
+        <field name="type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Ajouter un voyage
+            </p>
+        </field>
+    </record>
+
+
+   <record model="ir.ui.view" id="optesis_vehicule_form_view">
+        <field name="name">optesis.vehicule.form</field>
+        <field name="model">optesis.vehicule</field>
+        <field name="arch" type="xml">
+            <form string="Vehicule Form">
+                
+                <sheet>
+                     <group>
+                        <field name="code"/>
+                          <field name="name"/>
+                    </group>
+
+                  
+                </sheet>
+           
+            </form>
+        </field>
+        </record>
+        
+        
+        
+    <record  id="action_menu_form_vehicule" model="ir.actions.act_window">
+        <field name="name">Vehicule</field>
+        <field name="res_model">optesis.vehicule</field>
+        <field name="type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Ajouter un vehicule
+            </p>
+        </field>
+    </record>
+
+
+   <record model="ir.ui.view" id="optesis_site_form_view">
+        <field name="name">optesis.site.form</field>
+        <field name="model">optesis.site</field>
+        <field name="arch" type="xml">
+            <form string="Site Form">
+                
+                <sheet>
+                     <group>
+                        <field name="name"/>
+                          <field name="code"/>
+                    </group>
+
+                  
+                </sheet>
+           
+            </form>
+        </field>
+        </record>
+        
+        
+          <record  id="action_menu_form_site" model="ir.actions.act_window">
+        <field name="name">Site</field>
+        <field name="res_model">optesis.site</field>
+        <field name="type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Ajouter un site
+            </p>
+        </field>
+    </record>
+
+<record model="ir.ui.view" id="optesis_site_form_view">
+        <field name="name">optesis.bon.livraison.form</field>
+        <field name="model">optesis.bon.livraison</field>
+        <field name="arch" type="xml">
+            <form string="B/L Form">
+                
+                <sheet>
+                     <group>
+                        <field name="name"/>
+                        <field name="num_bl"/>
+                        <field name="volume"/>
+                        <field name="nature"/>
+                        <field name="mode"/>
+                    </group>
+                </sheet>
+           
+            </form>
+        </field>
+        </record>
+   
+             <record  id="action_menu_form_bon_livraison" model="ir.actions.act_window">
+        <field name="name">BonLivraison</field>
+        <field name="res_model">optesis.bon.livraison</field>
+        <field name="type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Ajouter un B/L
+            </p>
+        </field>
+    </record>
+
+
+    
+
+         <record model="ir.ui.view" id="account_view_form_inherit">
+            <field name="name">account.move.form.inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                    
+
+                <field name="invoice_payment_term_id" position="after">
+                    <field name="port_depart"/>
+                    <field name="port_arrivee"/>
+                    <field name="bon_livraison"/>
+                </field>   
+                 <field name="user_id" position="after">
+                    
+                     <field name="voyage" string="Voyage"/>
+                     
+                     
+                  
+                </field>   
+                  <field name="voyage" position="after">
+                     <field name="etat" invisible="1"/>
+                    
+                     
+                    <field name="code_select" attrs="{'invisible': [('etat', '!=', 1)]}" string="Designation"/>
+                    <field name="date_arrivee_select" attrs="{'invisible': [('etat', '!=', 1)]}" string="Date d'arrivée"/>
+                     
+                </field>   
+                
+            </field>
+             
+        </record>
+        
+
+              <record model="ir.ui.view" id="view_invoice_line_form_islr_inherited">
+            <field name="name">account_invoice_line_istamco_inherited</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+               
+                <xpath expr="//page/field[@name='invoice_line_ids']/tree/field[@name='analytic_account_id']" position="replace">
+                   
+                    <field name="voyag"/> 
+                                    
+                </xpath>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_invoice_line_form_bill_inherited">
+            <field name="name">account_invoice_form_view_inherited</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                 
+                 <field name="bank_partner_id" position="after">
+       <field name="voyage"  string=" Code Voyage"/>
+                    
+
+                </field>
+                
+                  <field name="voyage" position="after">
+                     <field name="etat" invisible="1"/>
+                    
+                    <field name="code_select" attrs="{'invisible': [('etat', '!=', 1)]}" string="Designation"/>
+
+                     
+                    <field name="date_arrivee_select" attrs="{'invisible': [('etat', '!=', 1)]}" string="Date d'arrivée"/>
+                </field> 
+                
+            </field>
+        </record>
+           <!--<record model="ir.ui.view" id="view_invoice_line_form_bill_inherited_line">
+            <field name="name">account_invoice_form_view_inherited_line</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='analytic_account_id']" position="after">
+           
+                   <field name="vehicul"/>
+                   <field name="sit"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='analytic_account_id']" position="replace">
+                   <field name="voyag" string="Voyage"/>
+                   
+                </xpath>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="view_invoice_line_form_move_inherited">
+            <field name="name">account_invoice_line_istamco_inherited</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                   <field name="op_arrivee"/>
+                    <field name="op_voyag"/>
+                    <field name="op_vehicul"/>
+                    <field name="op_sit"/>
+                </xpath>
+            </field>
+        </record>-->
+        <record model="ir.ui.view" id="view_form_move_inherited">
+            <field name="name">account_move_istamco_inherited</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='line_ids']/tree/field[@name='name']" position="after">
+                 <field name="op_arrivee"/>
+                    <field name="op_voyag"/>
+                    <field name="op_vehicul"/>
+                    <field name="op_sit"/>
+                </xpath>
+            </field>
+        </record>
+        
+            <!--<record model="ir.ui.view" id="view_invoice_chart_template_form_islr_inherited">
+            <field name="name">account_invoice_chart_template_istamco_inherited</field>
+            <field name="model">account.reconcile.model</field>
+            <field name="inherit_id" ref="account.view_account_reconcile_model_form"/>
+            <field name="arch" type="xml">
+               
+                <field name="account_id" position="after">
+                   
+                    <field name="voyag"/> 
+                                    
+                </field>
+            </field>
+        </record>-->
+    
+  
+    </data>
+</odoo>

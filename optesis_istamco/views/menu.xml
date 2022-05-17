@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+       
+        <menuitem   
+            id="menu_action_menu_port"
+            name="PORT"
+            parent="account.menu_finance_configuration"
+            action="action_menu_form_port"
+            sequence="0"
+          />
+        <menuitem parent="account.menu_finance_configuration"
+          id="menu_action_menu_voyage"
+          name="Voyage"
+          action="action_menu_form_voyage"
+          sequence="1"
+          />
+         <menuitem parent="account.menu_finance_configuration"
+          id="menu_action_menu_site"
+          name="Site"
+          action="action_menu_form_site"
+          sequence="0"
+          />
+        <menuitem parent="account.menu_finance_configuration"
+          id="menu_action_menu_vehicule"
+          name="Vehicule"
+          action="action_menu_form_vehicule"
+          sequence="0"
+          />
+        <menuitem parent="account.menu_finance_configuration"
+          id="menu_action_menu_bon_livraison"
+          name="Bon livraison"
+          action="action_menu_form_bon_livraison"
+          sequence="0"
+          />
+  
+    </data>
+</odoo>

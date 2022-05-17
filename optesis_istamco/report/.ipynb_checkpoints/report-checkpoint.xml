@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <!-- Pour Istamco -->
+        <report
+            id="action_report_istamco"
+            model="account.invoice"
+            string="Bon A Delivrer"
+            report_type="qweb-pdf"
+            name="optesis_istamco.optesis_report_istamco_modele_bd"
+            file="optesis_istamco.optesis_report_istamco_modele_bd"
+            paperformat="optesis_istamco.paperformat_facture_istamco_bad"
+            />
+
+    </data>
+</odoo>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- by ANG -->
+<odoo>
+  <template id="optesis_report_istamco_modele_bd">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="o">
+            <!--<t t-set="o" t-value="o.with_context(lang=lang)" />-->
+            <!--<t t-set="address" style="margin-top:-70px;padding-top:-90px;float:left">
+               <address t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;name&quot;], &quot;no_marker&quot;: True}" style="font-weight:bold" />
+               <address t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;], &quot;no_marker&quot;: True}" />
+               <div t-if="o.partner_id.vat" class="mt16 text-left" style="margin-top:-70px;padding-top:-90px">
+                  <t t-esc="o.company_id.country_id.vat_label or 'Tax ID'" />
+                  :
+                  <span t-field="o.partner_id.vat" />
+               </div>
+            </t>-->
+            <t t-call="optesis_istamco.optesis_external_view">
+               <div class="page" style="padding-top:44px">
+                  <style>span{
+                         font-size:20px;
+                         }
+                         page{
+                         padding-top:20px
+                         }</style>
+                  <div id="informations" class="row mt32 mb32" align="center">
+                     
+                         <div class="col-4" align="center">
+                             <p class="text-center" style="font-size:30px;font-weight:bold;border:1px solid;">BON A DELIVRER</p>
+                      </div>
+                  </div>
+                    <div id="informations" class="row mt42 mb32">
+                     <div class="col-4">
+                        <table style="width:100%" align="left">
+                            <tr>  
+                              <td>
+                                 <p style="font-size:20px;padding:0px;margin:0px;">
+                                    <strong>CLIENT :</strong>
+                                   
+                                 </p>
+                              </td>
+                                
+                              
+            
+                             </tr>
+                          
+                            
+                             <tr>  
+                          
+                                
+                                  <td>
+                                 <p style="padding:0px;margin:0px;font-size:20px">
+                                    <strong>ADRESSE :</strong>
+                                   
+                                 </p>
+                              </td>
+            
+                             </tr>
+                            <tr>  
+                              <td>
+                                 <p style="font-size:20px;padding:0px;margin:0px;">
+                                    <strong>NAVIRE M/V :</strong>
+                                   
+                                 </p>
+                              </td>
+            
+                             </tr>
+                           <tr>
+                               
+                              <td>
+                                 <p  style="font-size:20px;padding:0px;margin:0px;">
+                                    <strong>VOYAGE :</strong>
+                                  
+                                 </p>
+                              </td>
+            
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p style="font-size:20px;padding:0px;margin:0px;">
+                                    <strong>ETA </strong>
+                                   
+                                 </p>
+                              </td>
+                           </tr>
+                        
+                       
+                              <tr>
+                              <td>
+                                 <p style="font-size:20px;padding:0px;margin:0px;">
+                                    <strong>PORT DE CHARGEMENT :</strong>
+                                   
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p style="font-size:20px;padding:0px;margin:0px;">
+                                    <strong>DESTINATION FINALE  :</strong>
+                                 </p>
+                              </td>
+                           </tr>
+                            <tr>
+                              <td>
+                                 <p style="font-size:20px;padding:0px;margin:0px;">
+                                    <strong>REF .N/FACTURE N°</strong>
+                                  </p>
+                              </td>
+                           </tr>
+                        </table>
+                      </div>
+                         <div class="col-8" align="left">
+                           <table style="width:100%">
+                          <tr>
+                              <td style="padding-left:4px">
+                                 <span style="font-size:16px">
+                                    <strong>:  </strong>
+                                    <strong>
+                                        <span t-field="o.partner_id.name" />
+                                       
+                                      
+                                     </strong>
+                                  
+                                 </span>
+                              </td>
+                           </tr>
+                            
+                                <tr>
+                              <td style="padding-left:4px">
+                                 <span style="font-size:16px">
+                                     <span>:</span>
+                              
+                                   
+                                        <span t-field="o.partner_id.street" />
+                                      
+                                     
+                                  
+                                 </span>
+                              </td>
+                           </tr>
+                         
+                               
+                             <tr>
+                             <td style="padding-left:4px">
+                                 <span style="font-size:20px">
+                                    <strong>: </strong>
+                                
+                                 </span>
+                                 <span style="" t-field="o.x_studio_navire_mv_"></span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td style="padding-left:4px">
+                                 <span style="font-size:20px">
+                                    <strong>: </strong>
+                                     <span t-field="o.voyage.name" style="" />
+                                  
+                                 </span>
+                              </td>
+                           </tr>
+                            <tr>
+                              <td style="padding-left:4px">
+                                 <span style="font-size:20px">
+                                    <strong>: </strong>
+                                     <span t-field="o.date_arrivee_select" style="" />
+                                  
+                                 </span>
+                              </td>
+                           </tr>
+                               <tr>
+                            <td style="padding-left:4px">
+                                 <span style="font-size:20px">
+                                    <strong>: </strong>
+                               
+                                   <span t-field="o.port_depart.name" />
+                                 </span>
+                              </td>
+                           </tr>
+                            <tr>
+                       <td style="padding-left:4px">
+                                 <span style="font-size:20px">
+                                    <strong>: </strong>
+                               
+                                    <span t-field="o.x_studio_destination_finale.name" />
+
+                                 </span>
+                              </td>
+                           </tr>
+                         <tr>
+                             <td style="padding-left:4px">
+                                 <span style="font-size:20px">
+                                    <strong>: </strong>
+                               
+                                    <span t-field="o.number" />
+                                 </span>
+                              </td>
+                           </tr>
+                               
+
+                          
+                        
+                        </table>
+                         
+                     </div>
+                  </div>
+                      
+                     <table class="" style="margin-top:20px;margin-bottom:30px;width:100%;align:center">
+                        <tr>
+                            <td style="border:1px solid;font-size:20px;padding:3px">N° BL</td>
+                            <td style="border:1px solid;font-size:20px;padding:3px">DESIGNATION</td>
+                            <td style="border:1px solid;font-size:20px;padding:3px">POIDS/KGS</td>
+                              <td style="border:1px solid;font-size:20px;padding:3px">Volume</td>
+                        </tr>
+                          <tr t-if="o.bon_livraison.name">
+                            <td style="border:1px solid;padding:3px">
+                                <span t-field="o.bon_livraison.name" />
+                              </td>
+                             <td style="border:1px solid;padding:3px">
+                                  <span t-field="o.bon_livraison.nature" />
+                              </td>
+                             <td style="border:1px solid;padding:3px">
+                             <span t-field="o.bon_livraison.num_bl" />
+                            </td>
+                            <td style="border:1px solid;padding:3px">
+                                <span t-field="o.bon_livraison.volume" />
+                            </td>
+                        </tr>
+                        
+                 
+                        
+                    </table>
+                     <p style="font-size:22px;margin-top:20px;"><strong>Nombre de Colis :</strong> <span t-field="o.x_studio_nombre_de_colis" ></span> </p>
+                      <p style="font-size:22px;margin-top:20px"><strong>Descriptif de la Marchandise :</strong></p>
+                   <p style="font-size:22px;margin:0px;padding:0px">
+                       <span t-field="o.x_studio_descriptif_de_la_marchandise_3"></span> 
+                   </p>
+            
+                     <p style="font-size:22px;margin-top:20px"><strong>Date de fin de débarquement :</strong> <span t-field="o.x_studio_date_fin_de_debarquement"></span></p>
+             
+                   <p style="font-size:22px;margin-top:10px"><strong>Magasinage à partir du :</strong> <span t-field="o.x_studio_date_magasinage" ></span> 
+                       <span/>
+                   </p>
+             
+                    </div>
+            </t>
+         </t>
+      </t>
+   </template>
+</odoo>
