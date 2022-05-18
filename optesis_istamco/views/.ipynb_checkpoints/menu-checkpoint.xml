@@ -6,33 +6,33 @@
         <menuitem   
             id="menu_action_menu_port"
             name="PORT"
-            parent="account.menu_finance_configuration"
+            parent="account.action_account_config"	
             action="action_menu_form_port"
             sequence="0"
           />
-        <menuitem parent="account.menu_finance_configuration"
+        <menuitem parent="account.action_account_config"
           id="menu_action_menu_voyage"
           name="Voyage"
           action="action_menu_form_voyage"
-          sequence="1"
+          sequence="2"
           />
-         <menuitem parent="account.menu_finance_configuration"
+         <menuitem parent="account.action_account_config"
           id="menu_action_menu_site"
           name="Site"
           action="action_menu_form_site"
-          sequence="0"
+          sequence="3"
           />
-        <menuitem parent="account.menu_finance_configuration"
+        <menuitem parent="account.action_account_config"
           id="menu_action_menu_vehicule"
           name="Vehicule"
           action="action_menu_form_vehicule"
-          sequence="0"
+          sequence="4"
           />
-        <menuitem parent="account.menu_finance_configuration"
+        <menuitem parent="account.action_account_config"
           id="menu_action_menu_bon_livraison"
           name="Bon livraison"
           action="action_menu_form_bon_livraison"
-          sequence="0"
+          sequence="5"
           />
   
     </data>

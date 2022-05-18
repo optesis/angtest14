@@ -20,8 +20,9 @@
 
           <record  id="action_menu_form_port" model="ir.actions.act_window">
         <field name="name">Port</field>
+        <field name="type">ir.actions.act_window</field>
         <field name="res_model">optesis.port</field>
-        <field name="type">form</field>
+        
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="help" type="html">
@@ -54,8 +55,10 @@
   
           <record  id="action_menu_form_voyage" model="ir.actions.act_window">
         <field name="name">Voyage</field>
+               <field name="type">ir.actions.act_window</field>
         <field name="res_model">optesis.voyage</field>
-        <field name="type">form</field>
+       
+
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="help" type="html">
@@ -88,8 +91,10 @@
         
     <record  id="action_menu_form_vehicule" model="ir.actions.act_window">
         <field name="name">Vehicule</field>
+           <field name="type">ir.actions.act_window</field>
         <field name="res_model">optesis.vehicule</field>
-        <field name="type">form</field>
+             
+
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="help" type="html">
@@ -121,8 +126,10 @@
         
           <record  id="action_menu_form_site" model="ir.actions.act_window">
         <field name="name">Site</field>
+        <field name="type">ir.actions.act_window</field>
+
         <field name="res_model">optesis.site</field>
-        <field name="type">form</field>
+
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="help" type="html">
@@ -153,8 +160,10 @@
    
              <record  id="action_menu_form_bon_livraison" model="ir.actions.act_window">
         <field name="name">BonLivraison</field>
+        <field name="type">ir.actions.act_window</field>
         <field name="res_model">optesis.bon.livraison</field>
-        <field name="type">form</field>
+               
+
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="help" type="html">
@@ -173,15 +182,13 @@
             <field name="arch" type="xml">
                     
 
-                <field name="invoice_payment_term_id" position="after">
+                <field name="payment_reference" position="after">
                     <field name="port_depart"/>
                     <field name="port_arrivee"/>
                     <field name="bon_livraison"/>
                 </field>   
-                 <field name="user_id" position="after">
-                    
+                 <field name="invoice_date" position="after">
                      <field name="voyage" string="Voyage"/>
-                     
                      
                   
                 </field>   
@@ -196,7 +203,11 @@
                 
             </field>
              
+             
+             
+             
         </record>
+    
         
 
               <record model="ir.ui.view" id="view_invoice_line_form_islr_inherited">
@@ -251,7 +262,7 @@
                    
                 </xpath>
             </field>
-        </record>
+        </record>-->
          <record model="ir.ui.view" id="view_invoice_line_form_move_inherited">
             <field name="name">account_invoice_line_istamco_inherited</field>
             <field name="model">account.move.line</field>
@@ -264,7 +275,7 @@
                     <field name="op_sit"/>
                 </xpath>
             </field>
-        </record>-->
+        </record>
         <record model="ir.ui.view" id="view_form_move_inherited">
             <field name="name">account_move_istamco_inherited</field>
             <field name="model">account.move</field>
